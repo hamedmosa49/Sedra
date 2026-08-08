@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>سلة المشتريات | سدرة</title>
+
+    <link rel="stylesheet" href="Css/products.css">
+
+    <link rel="stylesheet" href="Css/cart.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+        NAVBAR
+========================= -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-ar">سدرة</span>
+
+                <span class="logo-en">
+                    SEDRA
+                </span>
+
+            </a>
+
+
+            <nav class="desktop-nav">
+
+                <a href="index.html">
+                    الرئيسية
+                </a>
+
+                <a href="products.html">
+                    منتجاتنا
+                </a>
+
+                <a href="about.html">
+                    تعرف علينا
+                </a>
+
+                <a href="cart.html" class="active">
+                    السلة
+                </a>
+
+            </nav>
+
+
+            <button class="menu-btn" id="menuBtn">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+
+        <div class="mobile-nav" id="mobileNav">
+
+            <a href="index.html">
+                الرئيسية
+            </a>
+
+            <a href="products.html">
+                منتجاتنا
+            </a>
+
+            <a href="about.html">
+                تعرف علينا
+            </a>
+
+            <a href="cart.html" class="active">
+                السلة
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+        CART HERO
+========================= -->
+
+    <section class="cart-hero">
+
+        <span class="hero-en">
+            YOUR CART
+        </span>
+
+        <h1>
+            سلة المشتريات
+        </h1>
+
+        <p>
+            راجع منتجاتك قبل تأكيد الطلب
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================
+        CART
+========================= -->
+
+    <main class="cart-section">
+
+
+        <div id="cartItems" class="cart-items">
+            <!-- المنتجات هتظهر هنا -->
+        </div>
+
+
+        <!-- =========================
+            EMPTY CART
+    ========================== -->
+
+        <div id="emptyCart" class="empty-cart">
+
+            <div class="empty-icon">
+                🛒
+            </div>
+
+            <h2>
+                السلة فارغة
+            </h2>
+
+            <p>
+                لم تقم بإضافة أي منتجات إلى السلة بعد
+            </p>
+
+            <a href="products.html">
+                تصفح المنتجات
+            </a>
+
+        </div>
+
+
+
+        <!-- =========================
+            CART SUMMARY
+    ========================== -->
+
+        <section id="cartSummary" class="cart-summary">
+
+            <div class="summary-row">
+
+                <span>
+                    عدد المنتجات
+                </span>
+
+                <strong id="summaryCount">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="summary-row total-row">
+
+                <span>
+                    الإجمالي
+                </span>
+
+                <strong>
+
+                    <span id="cartTotal">
+                        0
+                    </span>
+
+                    جنيه
+
+                </strong>
+
+            </div>
+
+
+            <button id="checkoutBtn" class="checkout-btn">
+
+
+
+                <a href="checkout.html">
+                    تأكيد الطلب
+                </a>
+
+
+
+            </button>
+
+
+            <button id="clearCartBtn" class="clear-cart-btn">
+
+                إفراغ السلة
+
+            </button>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+        SUCCESS MESSAGE
+========================= -->
+
+    <div id="cartMessage" class="cart-message">
+
+        <div class="message-box">
+
+            <div class="message-icon">
+                ✓
+            </div>
+
+            <h2>
+                تم تحديث السلة
+            </h2>
+
+            <button id="closeCartMessage">
+                حسناً
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+        FOOTER
+========================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <h2>
+                    سدرة
+                </h2>
+
+                <span>
+                    SEDRA
+                </span>
+
+                <p>
+                    جودة نثق بها... وطعم تحبه
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    الرئيسية
+                </a>
+
+                <a href="products.html">
+                    المنتجات
+                </a>
+
+                <a href="about.html">
+                    تعرف علينا
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 سدرة - جميع الحقوق محفوظة
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="Js/cart.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>إكمال الطلب | سدرة</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="Css/checkout.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="home.html" class="logo">
+                <span class="logo-ar">سدرة</span>
+                <span class="logo-en">SEDRA</span>
+            </a>
+
+            <a href="cart.html" class="back-cart">
+                السلة
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="checkout-page">
+
+        <section class="checkout-hero">
+
+            <span>SEDRA ORDER</span>
+
+            <h1>إكمال الطلب</h1>
+
+            <p>
+                أدخل بيانات التوصيل لإتمام طلبك
+            </p>
+
+        </section>
+
+
+        <section class="checkout-card">
+
+            <div class="section-heading">
+                <span>01</span>
+
+                <div>
+                    <h2>بيانات العميل</h2>
+                    <p>أدخل بياناتك بشكل صحيح</p>
+                </div>
+            </div>
+
+
+            <form id="checkoutForm">
+
+                <div class="input-group">
+
+                    <label for="fullName">
+                        الاسم بالكامل
+                    </label>
+
+                    <input type="text" id="fullName" placeholder="اكتب اسمك بالكامل" required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="phone">
+                        رقم الهاتف
+                    </label>
+
+                    <input type="tel" id="phone" placeholder="01XXXXXXXXX" inputmode="numeric" required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="governorate">
+                        المحافظة
+                    </label>
+
+                    <select id="governorate" required>
+
+                        <option value="">
+                            اختر المحافظة
+                        </option>
+
+                        <option value="القاهرة">القاهرة</option>
+                        <option value="الجيزة">الجيزة</option>
+                        <option value="الإسكندرية">الإسكندرية</option>
+                        <option value="القليوبية">القليوبية</option>
+                        <option value="الشرقية">الشرقية</option>
+                        <option value="الدقهلية">الدقهلية</option>
+                        <option value="الغربية">الغربية</option>
+                        <option value="المنوفية">المنوفية</option>
+                        <option value="البحيرة">البحيرة</option>
+                        <option value="كفر الشيخ">كفر الشيخ</option>
+                        <option value="دمياط">دمياط</option>
+                        <option value="بورسعيد">بورسعيد</option>
+                        <option value="الإسماعيلية">الإسماعيلية</option>
+                        <option value="السويس">السويس</option>
+                        <option value="شمال سيناء">شمال سيناء</option>
+                        <option value="جنوب سيناء">جنوب سيناء</option>
+                        <option value="الفيوم">الفيوم</option>
+                        <option value="بني سويف">بني سويف</option>
+                        <option value="المنيا">المنيا</option>
+                        <option value="أسيوط">أسيوط</option>
+                        <option value="سوهاج">سوهاج</option>
+                        <option value="قنا">قنا</option>
+                        <option value="الأقصر">الأقصر</option>
+                        <option value="أسوان">أسوان</option>
+                        <option value="الوادي الجديد">الوادي الجديد</option>
+                        <option value="مطروح">مطروح</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="center">
+                        المركز
+                    </label>
+
+                    <select id="center" required disabled>
+
+                        <option value="">
+                            اختر المحافظة أولًا
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="address">
+                        العنوان بالتفصيل
+                    </label>
+
+                    <textarea id="address" rows="4" placeholder="اسم الشارع، رقم المنزل، الدور، علامة مميزة..."
+                        required></textarea>
+
+                </div>
+
+
+                <div class="order-summary">
+
+                    <div class="summary-title">
+                        ملخص الطلب
+                    </div>
+
+                    <div id="orderItems"></div>
+
+                    <div class="summary-total">
+
+                        <span>
+                            الإجمالي
+                        </span>
+
+                        <strong id="orderTotal">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button type="submit" class="complete-order">
+                    إكمال الطلب
+                    <span>←</span>
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-brand">
+
+            <h2>سدرة</h2>
+
+            <span>SEDRA</span>
+
+            <p>جودة من الطبيعة</p>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 سدرة — جميع الحقوق محفوظة
+        </div>
+
+    </footer>
+
+
+    <script src="Js/checkout.js"></script>
+
+</body>
+
+</html>

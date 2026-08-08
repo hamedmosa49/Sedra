@@ -1,0 +1,706 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: #050505;
+    font-family: "Cairo", sans-serif;
+    overflow: hidden;
+}
+
+
+/* =========================
+   Loading Screen
+========================= */
+
+.loading-screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        radial-gradient(circle at 50% 45%,
+            #241a08 0%,
+            #0d0c09 35%,
+            #050505 75%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 9999;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================
+   Golden Glow
+========================= */
+
+.gold-glow {
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: #d6a62c;
+
+    filter: blur(160px);
+
+    opacity: .12;
+
+    animation: glowPulse 3s infinite alternate;
+
+}
+
+
+@keyframes glowPulse {
+
+    from {
+        transform: scale(.8);
+        opacity: .08;
+    }
+
+    to {
+        transform: scale(1.2);
+        opacity: .18;
+    }
+
+}
+
+
+/* =========================
+   Welcome
+========================= */
+
+.welcome {
+
+    position: absolute;
+
+    top: 9%;
+
+    text-align: center;
+
+    z-index: 5;
+
+    animation: welcomeIn 1.5s ease forwards;
+
+}
+
+
+.welcome-small {
+
+    display: block;
+
+    color: #b99135;
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 12px;
+
+    opacity: .8;
+
+}
+
+
+.welcome h1 {
+
+    color: #fff;
+
+    font-size: clamp(30px, 5vw, 58px);
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+.welcome h1 span {
+
+    color: #d4a52c;
+
+    text-shadow:
+        0 0 10px rgba(212, 165, 44, .5),
+        0 0 30px rgba(212, 165, 44, .25);
+
+}
+
+
+.welcome h2 {
+
+    direction: ltr;
+
+    color: #777;
+
+    font-size: clamp(13px, 2vw, 18px);
+
+    font-weight: 400;
+
+    letter-spacing: 4px;
+
+    margin-top: 5px;
+
+}
+
+
+.welcome h2 span {
+
+    color: #c69a32;
+
+}
+
+
+@keyframes welcomeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(-30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   Honey Jar
+========================= */
+
+.honey-container {
+
+    position: relative;
+
+    margin-top: 90px;
+
+    width: 230px;
+
+    height: 350px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+}
+
+
+/* Jar */
+
+.jar {
+
+    position: relative;
+
+    width: 190px;
+
+    height: 260px;
+
+    filter:
+        drop-shadow(0 25px 35px rgba(0, 0, 0, .8)) drop-shadow(0 0 20px rgba(212, 165, 44, .18));
+
+    animation: jarFloat 3s ease-in-out infinite;
+
+}
+
+
+@keyframes jarFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+
+}
+
+
+/* Lid */
+
+.jar-lid {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 12px;
+
+    width: 166px;
+
+    height: 45px;
+
+    border-radius: 12px 12px 8px 8px;
+
+    background:
+        linear-gradient(180deg,
+            #f0c653,
+            #9b6b12,
+            #e0b43d);
+
+    border: 2px solid #6e4a0b;
+
+    box-shadow:
+        inset 0 5px 8px rgba(255, 255, 255, .25),
+        0 5px 10px rgba(0, 0, 0, .5);
+
+}
+
+
+/* Lid Lines */
+
+.jar-lid::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 10px;
+
+    right: 10px;
+
+    top: 13px;
+
+    height: 2px;
+
+    background: rgba(70, 40, 0, .45);
+
+    box-shadow:
+        0 7px rgba(70, 40, 0, .35),
+        0 14px rgba(70, 40, 0, .3);
+
+}
+
+
+/* Jar body */
+
+.jar-body {
+
+    position: absolute;
+
+    top: 35px;
+
+    left: 0;
+
+    width: 190px;
+
+    height: 225px;
+
+    border-radius: 25px 25px 35px 35px;
+
+    overflow: hidden;
+
+    border: 2px solid rgba(212, 165, 44, .65);
+
+    background:
+
+        linear-gradient(90deg,
+            rgba(255, 255, 255, .13),
+            transparent 18%,
+            transparent 75%,
+            rgba(255, 255, 255, .1)),
+
+        #9b5c0c;
+
+    box-shadow:
+
+        inset 12px 0 20px rgba(255, 255, 255, .08),
+
+        inset -12px 0 20px rgba(0, 0, 0, .2);
+
+}
+
+
+/* Honey */
+
+.honey {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 92%;
+
+    background:
+
+        linear-gradient(90deg,
+            #9b5707,
+            #e5a52b 35%,
+            #f5c34b 50%,
+            #b96d0b 80%);
+
+    opacity: .95;
+
+}
+
+
+/* Honey shine */
+
+.honey-shine {
+
+    position: absolute;
+
+    left: 22px;
+
+    top: 15px;
+
+    width: 17px;
+
+    height: 150px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .16);
+
+    filter: blur(3px);
+
+}
+
+
+/* Label */
+
+.jar-label {
+
+    position: absolute;
+
+    top: 82px;
+
+    left: 15px;
+
+    width: 160px;
+
+    height: 105px;
+
+    background:
+
+        linear-gradient(135deg,
+            #f2df9a,
+            #d5b85c);
+
+    border: 2px solid #76520c;
+
+    border-radius: 5px;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #17130a;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, .35);
+
+}
+
+
+.jar-label strong {
+
+    font-size: 30px;
+
+    color: #173d16;
+
+}
+
+
+.jar-label small {
+
+    direction: ltr;
+
+    font-size: 16px;
+
+    letter-spacing: 4px;
+
+    color: #2f501b;
+
+}
+
+
+.jar-label span {
+
+    font-size: 10px;
+
+    margin-top: 8px;
+
+    color: #76520c;
+
+}
+
+
+/* =========================
+   Honey Pool
+========================= */
+
+.honey-pool {
+
+    position: absolute;
+
+    bottom: 18px;
+
+    width: 220px;
+
+    height: 35px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(ellipse,
+            #eab238 0%,
+            #a9660d 50%,
+            transparent 72%);
+
+    filter: blur(1px);
+
+    animation: poolPulse 2s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes poolPulse {
+
+    from {
+        transform: scaleX(.8);
+        opacity: .7;
+    }
+
+    to {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+
+}
+
+
+/* Honey Drops */
+
+.drop {
+
+    position: absolute;
+
+    width: 9px;
+
+    height: 16px;
+
+    border-radius: 50% 50% 60% 60%;
+
+    background: #d99b20;
+
+    box-shadow: 0 0 8px rgba(218, 158, 32, .5);
+
+}
+
+
+.drop1 {
+
+    left: 45%;
+
+    top: -12px;
+
+    animation: dropFall 2s infinite;
+
+}
+
+
+.drop2 {
+
+    left: 34%;
+
+    top: -7px;
+
+    animation: dropFall 2s 0.6s infinite;
+
+}
+
+
+.drop3 {
+
+    left: 58%;
+
+    top: -9px;
+
+    animation: dropFall 2s 1.1s infinite;
+
+}
+
+
+@keyframes dropFall {
+
+    0% {
+
+        transform: translateY(-15px) scale(.7);
+
+        opacity: 0;
+
+    }
+
+    35% {
+
+        opacity: 1;
+
+    }
+
+    80% {
+
+        transform: translateY(25px) scale(1);
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform: translateY(35px) scale(.2);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================
+   Loading Bottom
+========================= */
+
+.loading-bottom {
+
+    position: absolute;
+
+    bottom: 8%;
+
+    width: 220px;
+
+    text-align: center;
+
+}
+
+
+.loading-text {
+
+    color: #8f7742;
+
+    font-size: 12px;
+
+    margin-bottom: 10px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.progress {
+
+    width: 100%;
+
+    height: 2px;
+
+    background: rgba(255, 255, 255, .1);
+
+    overflow: hidden;
+
+}
+
+
+.progress-bar {
+
+    height: 100%;
+
+    width: 0%;
+
+    background: #d4a52c;
+
+    box-shadow: 0 0 12px #d4a52c;
+
+    animation: loading 3.5s linear forwards;
+
+}
+
+
+@keyframes loading {
+
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 600px) {
+
+    .welcome {
+
+        top: 10%;
+
+    }
+
+    .welcome-small {
+
+        font-size: 8px;
+
+        letter-spacing: 3px;
+
+    }
+
+    .honey-container {
+
+        transform: scale(.82);
+
+        margin-top: 80px;
+
+    }
+
+    .loading-bottom {
+
+        bottom: 7%;
+
+    }
+
+}
