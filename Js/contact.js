@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // رقم واتساب سدرة
     // اكتب الرقم بصيغة دولية بدون +
-    const sedraWhatsApp = "201280331359";
+    const sedraWhatsApp = "201010472727";
 
     if (form) {
 
