@@ -2,53 +2,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let deferredPrompt = null;
 
-    // =========================
-    // SERVICE WORKER
-    // =========================
-
-    if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-            navigator.serviceWorker
-                .register("./service-worker.js")
-                .catch(error => {
-                    console.error("SW Error:", error);
-                });
-        });
-    }
-
-
-    // =========================
-    // INSTALL BANNER
-    // =========================
-
     const banner = document.createElement("div");
 
     banner.id = "sedraInstallBanner";
 
     banner.innerHTML = `
-        <div class="sedra-install-content">
+        <div class="sedra-install-box">
+
+            <button
+                class="sedra-install-close"
+                id="sedraInstallClose"
+                type="button">
+                ×
+            </button>
 
             <div class="sedra-install-icon">
                 سدرة
             </div>
 
-            <div class="sedra-install-text">
-                <strong>ثبّت تطبيق سدرة 📱</strong>
+            <div class="sedra-install-info">
+
+                <strong>
+                    أضف سدرة إلى شاشتك 📱
+                </strong>
 
                 <span>
-                    أضف سدرة إلى شاشة هاتفك للوصول السريع
+                    احفظ موقع سدرة على شاشة هاتفك
+                    للوصول إليه بسرعة.
                 </span>
+
             </div>
 
-            <button id="sedraInstallBtn" type="button">
-                تثبيت التطبيق
-            </button>
-
             <button
-                id="sedraInstallClose"
-                type="button"
-                aria-label="إغلاق">
-                ×
+                class="sedra-install-btn"
+                id="sedraInstallBtn"
+                type="button">
+
+                إضافة الآن
+
             </button>
 
         </div>
@@ -64,22 +55,16 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("sedraInstallClose");
 
 
-    // =========================
-    // SHOW BANNER AUTOMATICALLY
-    // =========================
-
+    // إظهار الرسالة
     setTimeout(() => {
         banner.classList.add("show");
-    }, 500);
+    }, 700);
 
 
-    // =========================
-    // BROWSER INSTALL EVENT
-    // =========================
-
+    // لو المتصفح بيدعم التثبيت
     window.addEventListener(
         "beforeinstallprompt",
-        (event) => {
+        event => {
 
             event.preventDefault();
 
@@ -89,15 +74,14 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    // =========================
-    // INSTALL
-    // =========================
-
     installBtn.addEventListener(
         "click",
         async () => {
 
-            // المتصفح يسمح بالتثبيت
+            // =========================
+            // SUPPORTED INSTALL
+            // =========================
+
             if (deferredPrompt) {
 
                 deferredPrompt.prompt();
@@ -118,21 +102,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             // =========================
-            // FALLBACK
+            // ANDROID INSTRUCTIONS
             // =========================
 
             alert(
-                "لو لم تظهر نافذة التثبيت، افتح قائمة المتصفح ثم اختر «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية»."
+                "لإضافة سدرة إلى شاشة هاتفك:\n\n" +
+                "1. اضغط على ⋮ أعلى المتصفح.\n" +
+                "2. اختر «إضافة إلى الشاشة الرئيسية».\n" +
+                "3. اضغط «إضافة»."
             );
 
         }
     );
 
 
-    // =========================
-    // CLOSE
-    // =========================
-
+    // إغلاق
     closeBtn.addEventListener(
         "click",
         () => {
@@ -143,17 +127,12 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    // =========================
-    // APP INSTALLED
-    // =========================
-
+    // بعد التثبيت
     window.addEventListener(
         "appinstalled",
         () => {
 
             banner.classList.remove("show");
-
-            deferredPrompt = null;
 
         }
     );

@@ -1,0 +1,158 @@
+#sedraInstallBanner {
+    position: fixed;
+
+    top: 15px;
+    left: 15px;
+    right: 15px;
+
+    z-index: 99999;
+
+    transform: translateY(-150px);
+
+    opacity: 0;
+
+    transition: 0.45s ease;
+}
+
+#sedraInstallBanner.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.sedra-install-box {
+    position: relative;
+
+    max-width: 650px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 14px 18px;
+
+    background: #0d0d0d;
+
+    border: 1px solid rgba(216, 189, 99, 0.35);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.65);
+}
+
+.sedra-install-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #b99532;
+
+    color: #070707;
+
+    border-radius: 12px;
+
+    font-family: "Cairo", sans-serif;
+
+    font-weight: 800;
+
+    font-size: 15px;
+}
+
+.sedra-install-info {
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.sedra-install-info strong {
+    color: #d8bd63;
+
+    font-size: 13px;
+}
+
+.sedra-install-info span {
+    color: #85827b;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+.sedra-install-btn {
+    border: 1px solid #b99532;
+
+    background: #b99532;
+
+    color: #070707;
+
+    border-radius: 9px;
+
+    padding: 9px 15px;
+
+    font-family: "Cairo", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+.sedra-install-close {
+    position: absolute;
+
+    top: 3px;
+    left: 5px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #85827b;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+@media (max-width: 500px) {
+
+    .sedra-install-box {
+        padding: 13px 14px;
+        gap: 10px;
+    }
+
+    .sedra-install-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 13px;
+    }
+
+    .sedra-install-info strong {
+        font-size: 11px;
+    }
+
+    .sedra-install-info span {
+        display: none;
+    }
+
+    .sedra-install-btn {
+        padding: 8px 11px;
+        font-size: 10px;
+    }
+}
